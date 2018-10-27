@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Bbs</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BBS</title>
+  <link rel="stylesheet" href="<%= stylesheet_path 'application' %>">
+  <%= javascript_include_tag "application"%>
+</head>
+<body class="<%= params[:controller] + '-' + params[:action] %>">  
+  <div class="navbar clearfix">
+    <div class="container">
+        <a class="navbar-brand" href="/">BBS</a>
+        <ul class="nav left">
+            <li><a href="/
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+              about">About</a></li>
+            <li><a href="#">placeholder</a></li>
+        </ul>
+        <ul class="nav right">
+            <li><a href="#">login</a></li>
+           <li><a href="#">signup</a></li>
+         </ul>
+      </div>
+  </div>
+  <%= yield %>
+  <div class="footer">
+    <div class="container">
+        footer
+      </div>
+  </div>
 
-  <body>
-    <%= yield %>
-  </body>
+</body>
 </html>
