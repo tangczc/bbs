@@ -1,15 +1,21 @@
-
- <div class="home-banner"  style="background:url(<%= image_url "bj.jpg" %>) no-repeat;  background-size: 100% 100%;">
+<div class="home-banner"  style="background:url(<%= image_url "bj.jpg" %>) no-repeat;  background-size: 100% 100%;">
  	<div class="banner-inner container clearfix">
-  <h1>It's Party Time!</h1>
-  <p class="subheading">hello world</p>
-  <div class="home-banner-links">
-    <%= link_to "发布新活动", "#", class: "banner-btn btn" %>
-  </div>
+		<h1>这是个论坛!</h1>
+		<p class="subheading">你好用户</p>
+		<div class="home-banner-links">
+    		<%= link_to "发布新活动", "#", class: "banner-btn btn" %>
+		</div>
+	</div>
 </div>
- </div>
- 	
+<div class="issue-list-header">
+	<div class="container clearfix">
+		<h1>所有的活动都在下面了....</h1>
+	</div>
+</div>
+<div class="container clearfix">
+	<%= render "issue_list", local: { issues: @issues}%>
 
+</div>
 <script>
     $('.home-banner').anystretch();
 </script>
