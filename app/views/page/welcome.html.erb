@@ -1,7 +1,7 @@
 <div class="home-banner"  style="background:url(<%= image_url "bj.jpg" %>) no-repeat;  background-size: 100% 100%;">
  	<div class="banner-inner container clearfix">
-		<h1>这是个论坛!</h1>
-		<p class="subheading">你好用户</p>
+		<h1>It's Party Time Drinkup!</h1>
+		<p class="subheading">你好用户~</p>
 		<div class="home-banner-links">
     		<%= link_to "发布新活动", "#", class: "banner-btn btn" %>
 		</div>
@@ -13,8 +13,29 @@
 	</div>
 </div>
 <div class="container clearfix">
-	<%= render "issue_list", local: { issues: @issues}%>
-
+	<div class="container clearfix">
+		<% @issues.each do |i| %>
+		<div class="issue-list">
+			<article class="issue clearfix">
+      			<div class="avatar">
+        			<a href="/"><img src=http://gravatar.com/avatar/1354684.png?s=512&amp;d=retro alt=""></a>      
+        		</div>
+      			<div class="body">
+        			<h5 class="title">
+         				<%= link_to i[:title],"#" %>
+        			</h5>
+        			<a class="read-more" href="#">read</a>
+        			<span class="meta-data">
+          				<a href="/">lichen</a>
+        			</span>
+      			</div>
+      			<div class="issue-comment-count">
+        			<%= link_to i[:comments],"#" %>
+      			</div>
+    		</article>
+  		</div>
+  		<% end %>
+	</div>
 </div>
 <script>
     $('.home-banner').anystretch();
