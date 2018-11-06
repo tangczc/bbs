@@ -5,6 +5,7 @@
   <title>BBS</title>
   <link rel="stylesheet" href="<%= stylesheet_path 'application' %>">
   <%= javascript_include_tag "application"%>
+  <%= csrf_meta_tags %>
 </head>
 <body class="<%= params[:controller] + '-' + params[:action] %>">  
   <div class="navbar clearfix">
