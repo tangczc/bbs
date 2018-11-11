@@ -1,5 +1,5 @@
 class PageController < ApplicationController
   def welcome
-  	 @issues  =  @issues = Issue.all
+  	 @issues  = Issue.all.reverse
   end
 end

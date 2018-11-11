@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 	post 'issues' => 'issues#create'
 	get 'issues/:id/edit' => 'issues#edit', :as => 'edit_issue'
 	patch 'issues/:id' => 'issues#update'
+
+	#comments
+	post '/issues/:issue_id/comments' => "comments#create"
 end
