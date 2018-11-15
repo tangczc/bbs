@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'issues/show'
+    get 'issues/show'
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root 'page#welcome' 
 	get '/about' => 'page#about'
@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
 	#comments
 	post '/issues/:issue_id/comments' => "comments#create"
+
+	#users
+	get 'signup' => 'users#signup', :as =>'signup'
+	post 'signup' => 'users#create', :as => 'signup_create'
 end

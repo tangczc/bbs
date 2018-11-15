@@ -1,0 +1,23 @@
+<div class="signup-form-container clearfix ">
+  <div class="signup-form">
+	<%= form_for @user ,url: signup_create_path do |f|%>
+	  <dl class="form">
+		<%= f.label :name, "用户名"%>
+		<%= f.text_field :name %>
+	  </dl>
+	  <dl class="form">
+		<%= f.label :email,"邮箱"%>
+		<%= f.text_field :email%>
+	  </dl>
+	  <dl class="form">
+		<%= f.label :password, "密码"%>
+		<%= f.password_field :password%>
+	  </dl>
+	  <dl class="form">
+		<%= f.label :password_confirmation,"确认密码"%>
+		<%= f.password_field:password_confirmation %>
+	  </dl>
+	  <p><%= f.submit "注册", :class => "signup-button btn btn-primary" %></p>
+	<% end %>
+  </div>
+</div>
