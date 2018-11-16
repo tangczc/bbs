@@ -18,4 +18,7 @@ Rails.application.routes.draw do
 	#users
 	get 'signup' => 'users#signup', :as =>'signup'
 	post 'signup' => 'users#create', :as => 'signup_create'
+	get 'login' => 'users#login', :as => 'login'
+	post 'login_create' => 'users#login_create'
+	delete 'logout' => 'users#logout', :as => 'logout'
 end
