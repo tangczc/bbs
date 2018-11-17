@@ -5,6 +5,7 @@
   <title>BBS</title>
   <link rel="stylesheet" href="<%= stylesheet_path 'application' %>">
   <%= javascript_include_tag "application"%>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= params[:controller] + '-' + params[:action] %>">  
@@ -12,7 +13,7 @@
     <div class="container">
         <a class="navbar-brand" href="/">BBS</a>
         <ul class="nav left">
-            <li><%= link_to "关于",'about'%></li>
+            <li><%= link_to t("navbar.about"),'about'%></li>
             <li><a href="#"></a></li>
         </ul>
         <ul class="nav right">
@@ -26,12 +27,17 @@
          </ul>
       </div>
   </div>
+  <% if flash.notice %>
+    <div class="notice">
+      <%= flash.notice %>
+    </div>
+  <% end %>
   <%= yield %>
   <div class="footer">
     <div class="container">
         footer
       </div>
   </div>
-
+  
 </body>
 </html>

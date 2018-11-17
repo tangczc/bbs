@@ -1,4 +1,4 @@
-<div class="home-banner"  style="background:url(<%= image_url "bj.jpg" %>) no-repeat;  background-size: 100% 100%;">
+ <div class="home-banner" data-stretch="<%= image_url "bj.jpg" %>">
  	<div class="banner-inner container clearfix">
 		<h1>It's Party Time Drinkup!</h1>
 		<p class="subheading">你好用户~</p>
@@ -28,7 +28,7 @@
         			<a class="read-more" href="#">read</a>
         			<span class="meta-data">
           				<a href="/">lichen</a>
-                  <%= time_ago_in_words(i.created_at) %> ago
+                  <%= time_ago_in_words(i.created_at) %> 前
         			</span>
       			</div>
       			<div class="issue-comment-count">
@@ -42,4 +42,8 @@
 </div>
 <script>
     $('.home-banner').anystretch();
+    var hideNotice = function(){
+      $(".notice").fadeOut("slow");
+    }
+    setTimeout(hideNotice, 2000)
 </script>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 	patch 'issues/:id' => 'issues#update'
 
 	#comments
-	post '/issues/:issue_id/comments' => "comments#create"
+	resources :comments, only: [:create]
 
 	#users
 	get 'signup' => 'users#signup', :as =>'signup'

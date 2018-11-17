@@ -69,6 +69,10 @@ a:hover {
   user-select: none;
 }
 form {
+  .error{
+    margin:5px 0 9px;
+    color: #DB8A14;
+  }
   input {
     font-size: 21px;
     width: 100%;
@@ -89,4 +93,16 @@ form {
   dd {
     margin: 0;
   }
+}
+.notice {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 20px;
+  margin-left: 45%;
+  background: teal;
+  color: white;
+  padding: 20px;
+  -webkit-box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
+  -moz-box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
+  box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
 }
