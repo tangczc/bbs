@@ -73,6 +73,11 @@ form {
     margin:5px 0 9px;
     color: #DB8A14;
   }
+  *{
+    &:focus{
+      outline: none;
+    }
+  }
   input {
     font-size: 21px;
     width: 100%;

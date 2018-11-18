@@ -1,4 +1,4 @@
-<% comments.each do |c| %>
+
     <div class="reply clearfix">
        <div class="avatar">
          <%= link_to '#' do %>
@@ -12,7 +12,6 @@
               <%= time_ago_in_words c.created_at %> 前
             </span>
          </div>
-         <%= c.content %>
+         <%= markdown c.content %>
        </div>
     </div>
-  <% end %>

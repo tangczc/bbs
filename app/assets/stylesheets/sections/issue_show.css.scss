@@ -26,7 +26,21 @@
     }
   }
   .body {
-    padding: 15px;
+    padding: 15px 40px 10px 40px;
+    .highlight {
+      margin-top: 15px;
+      background: #2D3037;
+      padding: 5px 40px;
+      margin-left: -40px;
+      margin-right: -40px;
+      pre {
+        margin-top: 9px;
+      }
+    }
+    textarea {
+      border: none;
+      height: 230px;
+    }
     border-radius: 5px;
     position: relative;
     overflow: visible;

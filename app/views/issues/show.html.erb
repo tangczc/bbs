@@ -15,10 +15,12 @@
         <div class="heading">
           <h5 class="name"><a href="#">happypeter</a></h5>
         </div>
-        <%= @issue.content %>
+        <%= markdown @issue.content %>
       </div>
     </article>
-    <%= render partial: 'shared/comment_list', locals: {comments: @comments} %>
-    <%= render partial: 'shared/comment_box', locals: {issue: @issue} %>
+    <% @comments.each do |c|%>
+      <%= render partial: 'shared/comment', locals:{c: c} %>
+    <% end %>
   </div>
+  <%= render partial: 'shared/comment_box', locals: {issue: @issue} %>
 </div>

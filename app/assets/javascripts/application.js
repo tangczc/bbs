@@ -17,3 +17,5 @@
 //= require turbolinks
 //= require_tree .
 //= require vendor/jquery.anystretch.min.js
+//= require jquery.atwho
+//= require vendor/jquery.hotkeys
