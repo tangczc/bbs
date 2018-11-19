@@ -9,7 +9,13 @@ class IssuesController < ApplicationController
 	  redirect_to :root
   end
   def new
-  	@issue = Issue.new
+    if not current_user
+      flash[:notice] = "请先登录"
+      redirect_to :root
+      return
+    else
+      @issue = Issue.new
+    end
   end
   def create
   	Issue.create(issue_params)
@@ -25,6 +31,6 @@ class IssuesController < ApplicationController
   end
   private
 	  def issue_params
-	    params.require(:issue).permit(:title, :content)
+	    params.require(:issue).permit(:title, :content, :user_id)
 	  end
 end
