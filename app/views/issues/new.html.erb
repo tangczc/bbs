@@ -1,6 +1,7 @@
 <div class="new-issue-form-container clearfix">
   <div class="new-issue-form clearfix">
-    <%= form_for @issue do |f| %>
+    <%= form_for (Issue.new(user_id: current_user.id)) do |f| %>
+      <%= f.hidden_field :user_id %>
       <dl class="form">
         <dt><%= f.label "标题" %></dt>
         <dd><%= f.text_field :title %></dd>

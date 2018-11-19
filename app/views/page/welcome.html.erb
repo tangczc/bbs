@@ -14,30 +14,7 @@
 </div>
 <div class="container clearfix">
 	<div class="container clearfix">
-		<% @issues.each do |i| %>
-		<div class="issue-list">
-			<article class="issue clearfix">
-      			<div class="avatar">
-        			<a href="/"><img src=http://gravatar.com/avatar/1354684.png?s=512&amp;d=retro alt=""></a>      
-        		</div>
-      			<div class="body">
-        			<h5 class="title">
-         				
-         				<%= link_to i.title, issue_path(i) %>
-        			</h5>
-        			<a class="read-more" href="#">read</a>
-        			<span class="meta-data">
-          				<a href="/">lichen</a>
-                  <%= time_ago_in_words(i.created_at) %> 前
-        			</span>
-      			</div>
-      			<div class="issue-comment-count">
-              <i class="fa fa-comments icon-muted"></i>
-        			<%= link_to i.comments.count, i %>
-      			</div>
-    		</article>
-  		</div>
-  		<% end %>
+		<%= render partial: 'shared/issue_list', locals: {issues: @issues} %>
 	</div>
 </div>
 <script>
