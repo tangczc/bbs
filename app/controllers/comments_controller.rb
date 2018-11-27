@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	#创建留言
 	def create
 	  @comment = Comment.new(comment_params)
 	  @comment.save

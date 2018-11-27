@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
+  #注册界面
   def signup
   	@user = User.new
   end
+  #注册
+  #cookies用于标识用户状态
   def create
   	@user = User.new(user_params)
   	if @user.save
@@ -11,9 +14,11 @@ class UsersController < ApplicationController
   		render :signup
   	end
   end
+  #登陆界面
   def login
   	@user = User.new
   end
+  #登陆
   def login_create
   	user = User.find_by_name(params[:name])
   	if user && user.authenticate(params[:password])
@@ -29,6 +34,7 @@ class UsersController < ApplicationController
     	redirect_to :login
   	end
   end
+  #登出
   def logout
   	cookies.delete(:auth_token)
   	redirect_to :root
