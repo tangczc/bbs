@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def signup
   	@user = User.new
   end
+  #展示所有用户
+  def index
+    @users = User.all
+  end
   #注册
   #cookies用于标识用户状态
   def create
