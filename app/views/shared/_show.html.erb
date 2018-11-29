@@ -1,0 +1,10 @@
+<%users.each do |user| %>
+  <table>
+  	<tr>
+  		<td><%= image_tag user.avatar, class: 'image_user' %></td>
+  		<td><%= link_to user.name, "#" %></td>
+  		<td><%= link_to "删除", "#" %></td>
+  		<td><%= link_to "修改", "#" %></td>
+	</tr>
+  </table>
+<% end %>
