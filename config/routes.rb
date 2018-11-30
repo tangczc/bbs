@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 	get 'login' => 'users#login', :as => 'login'
 	post 'login_create' => 'users#login_create'
 	delete 'logout' => 'users#logout', :as => 'logout'
+	get 'show' => 'users#index', :as => 'show'
 end
