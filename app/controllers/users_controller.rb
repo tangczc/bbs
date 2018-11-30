@@ -5,7 +5,13 @@ class UsersController < ApplicationController
   end
   #展示所有用户
   def index
-    @users = User.all
+    if not current_user && current_user.admin === true
+      flash[:notice] = "请用管理员用户登录"
+      redirect_to :login
+      return
+    else
+      @users = User.all
+    end
   end
   #注册
   #cookies用于标识用户状态
