@@ -14,7 +14,9 @@
         <a class="navbar-brand" href="/">BBS</a>
         <ul class="nav left">
             <li><%= link_to t("navbar.about"),'about'%></li>
+          <% if current_user && current_user.admin == true %>
             <li><%= link_to "所有用户",'show'%></a></li>
+          <% end %>
         </ul>
         <ul class="nav right">
           <% if current_user %>
