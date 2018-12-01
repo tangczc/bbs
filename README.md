@@ -2,6 +2,7 @@
 <h1>项目部署</h1>
 <p>git clone https://github.com/tangczc/bbs.git</p>
 <p>cd bbs</p>
+<p>chang config/database.yml to your db</p>
 <p>gem install execjs</p>
 <p>gem  install therubyracer</p>
 <p>yum install nodejs</p>
