@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   #展示所有用户
   def index
-    if not current_user && current_user.admin === true
+    if not current_user && current_user.admin == "true"
       flash[:notice] = "请用管理员用户登录"
       redirect_to :login
       return
@@ -44,10 +44,28 @@ class UsersController < ApplicationController
     	redirect_to :login
   	end
   end
+  #编辑用户界面
+  def edit
+    @user = User.find(params[:id])
+  end
+  #更新用户
+  def update
+    u = User.find(params[:id])
+    u.update_attributes(user_params)
+    flash.notice = "修改用户成功"
+    redirect_to :show
+  end
   #登出
   def logout
   	cookies.delete(:auth_token)
   	redirect_to :root
+  end
+  #删除用户(注：管理员才可以)
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    flash.notice = "用户删除成功"
+    redirect_to :show
   end
   private
   	def user_params

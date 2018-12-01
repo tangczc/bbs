@@ -22,14 +22,45 @@
 }
 .show_users{
   margin:10px 20em;
+  .user_info{
+    height: 10em;
+    background-color: red;
+  }
   td{
     padding-top: 10px;
-    padding-left: 20px;
+    padding-left: 20px; 
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    
+  }
+  .setting_btn{
+    width: 90em;
+    a{
+      margin-right: 15px;
+      float: right;
+    }
   }
   .image_user{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     margin-top: 5px;
     border-radius: 50px;
   }
+}
+.user_edit{
+  margin-top: 40px;
+  margin-left: 45em;
+  margin-right: 45em;
+  td{
+    width: 100em;
+    #post_category1{
+      width: 1em;
+    }
+    #post_category2{
+      width: 2em;
+      margin-top: -10px;
+    }
+  }
+
 }

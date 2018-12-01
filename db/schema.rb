@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_111651) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "auth_token"
-    t.boolean "admin"
+    t.string "admin"
   end
 
 end

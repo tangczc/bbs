@@ -1,10 +1,14 @@
 <%users.each do |user| %>
-  <table>
+  <table rules=none>
   	<tr>
   		<td><%= image_tag user.avatar, class: 'image_user' %></td>
   		<td><%= link_to user.name, "#" %></td>
-  		<td><%= link_to "删除", "#" ,class: "btn btn-primary" %></td>
-  		<td><%= link_to "修改", "#" ,class: "btn btn-primary" %></td>
+  		<td class="setting_btn" colspan="2">
+  		  <% if current_user != user %>
+  			<%= link_to '删除用户', delete_path(user), method: :delete, data: {confirm: "确定要删除吗？" }, class: "btn btn-primary" %>
+  		  <% end %>
+  		  <%= link_to "修改用户", edit_user_path(user) ,class: "btn btn-primary" %>
+  		</td>	
 	</tr>
   </table>
 <% end %>

@@ -9,6 +9,7 @@ class IssuesController < ApplicationController
   def destroy
 	  issue = Issue.find(params[:id])
 	  issue.destroy
+    flash[:notice] = "活动删除成功"
 	  redirect_to :root
   end
   #活动创建页面

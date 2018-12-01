@@ -21,5 +21,8 @@ Rails.application.routes.draw do
 	get 'login' => 'users#login', :as => 'login'
 	post 'login_create' => 'users#login_create'
 	delete 'logout' => 'users#logout', :as => 'logout'
+	delete 'delete/:id' => 'users#destroy', :as => 'delete'
 	get 'show' => 'users#index', :as => 'show'
+	get 'users/:id/edit' => 'users#edit', :as => 'edit_user'
+	patch 'users/:id' => 'users#update', :as => 'update_user'
 end
