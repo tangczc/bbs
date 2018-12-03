@@ -67,6 +67,14 @@ class UsersController < ApplicationController
     flash.notice = "用户删除成功"
     redirect_to :show
   end
+  #用户主页
+  def show_user
+    if current_user
+      @current_user = current_user
+    else
+      redirect_to :root
+    end
+  end
   private
   	def user_params
   		params.require(:user).permit!

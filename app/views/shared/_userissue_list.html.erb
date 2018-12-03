@@ -10,15 +10,14 @@
         <h5 class="title">
           <%= link_to i.title, issue_path(i) %>
         </h5>
-        <%= link_to "read", issue_path(i),class: "read-more" %>
+        <%= link_to "read", issue_path(i),class: "read-more" %>     
         <span class="meta-data">
           <%= link_to i.user.name, show_user_path %>
           <%= time_ago_in_words(i.created_at) %> 前
         </span>
       </div>
       <div class="issue-comment-count">
-           <i class="fa fa-comments icon-muted"></i>
-          <%= link_to i.comments.count, i %>
+        <%= link_to '删除活动', issue_path(i), method: :delete, data: {confirm: "确定要删除吗？" }, class: "btn btn-primary user_issue_delete", style: "font-size: 18px;" %>
       </div>
     </article>
   </div>

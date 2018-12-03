@@ -64,3 +64,31 @@
   }
 
 }
+.information{
+  text-align: center;
+  margin-top: 50px;
+  .image_user1{
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+  }
+  .user_name{
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+  }
+  hr{
+    margin: 20px 400px;
+  }
+  .user_issue{
+    margin:0px 400px;
+  }
+  .body{
+    margin-left: -300px;
+  }
+  .user_issue_delete{
+    height: 40px;
+    width: 100px;
+  }
+}

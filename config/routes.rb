@@ -25,4 +25,5 @@ Rails.application.routes.draw do
 	get 'show' => 'users#index', :as => 'show'
 	get 'users/:id/edit' => 'users#edit', :as => 'edit_user'
 	patch 'users/:id' => 'users#update', :as => 'update_user'
+	get 'show_user' => 'users#show_user', :as => 'show_user'
 end
